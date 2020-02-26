@@ -1,0 +1,2 @@
+## opengl projects in mac for Xcode
+cmake -G "Xcode" .   

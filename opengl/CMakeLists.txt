@@ -31,7 +31,18 @@ endif(MACOSX)
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 set(SOURCES main.cc glad.c)
 
+set(CMAKE_BUILD_TYPE Debug)
+
+# main1.cc
 add_executable(OpenGL ${SOURCES})
 target_include_directories(OpenGL PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/GLFW)
 target_include_directories(OpenGL PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/dependencies)
 target_link_libraries(OpenGL ${OPENGL_LIBRARIES} ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/GLFW/lib/libglfw3.a ${frameworks})
+
+
+# main2.cc
+
+add_executable(Shaders main2.cc glad.c)
+target_include_directories(Shaders PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/GLFW)
+target_include_directories(Shaders PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/dependencies)
+target_link_libraries(Shaders ${OPENGL_LIBRARIES} ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/GLFW/lib/libglfw3.a ${frameworks})
