@@ -8,8 +8,8 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow *window);
 
 //// settings
-//const unsigned int SCR_WIDTH = 800;
-//const unsigned int SCR_HEIGHT = 600;
+const unsigned int SCR_WIDTH = 800;
+const unsigned int SCR_HEIGHT = 600;
 
 const char *vertexShaderSource ="#version 330 core\n"
 "layout (location = 0) in vec3 aPos;\n"
@@ -106,7 +106,9 @@ int main()
         -0.5f, -0.5f, 0.0f,  // bottom left
         0.0f,  0.5f, 0.0f   // top
     };
-    
+    // Vertex Array Object，VAO
+    // Vertex Buffer Object，VBO
+    // Element Buffer Object，EBO或Index Buffer Object，IBO
     unsigned int VBO, VAO;
     glGenVertexArrays(1, &VAO);
     glGenBuffers(1, &VBO);
@@ -116,6 +118,8 @@ int main()
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
     
+    
+    //如何链接顶点显存到顶点着色器
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
     
@@ -126,7 +130,7 @@ int main()
     
     // bind the VAO (it was already bound, but just to demonstrate): seeing as we only have a single VAO we can
     // just bind it beforehand before rendering the respective triangle; this is another approach.
-    glBindVertexArray(VAO);
+//    glBindVertexArray(VAO);
     
     
     // render loop
