@@ -46,3 +46,9 @@ add_executable(Shaders main2.cc glad.c)
 target_include_directories(Shaders PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/GLFW)
 target_include_directories(Shaders PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/dependencies)
 target_link_libraries(Shaders ${OPENGL_LIBRARIES} ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/GLFW/lib/libglfw3.a ${frameworks})
+
+## rectangle
+add_executable(Rectangle rectangle.cc glad.c)
+target_include_directories(Rectangle PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/GLFW)
+target_include_directories(Rectangle PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/dependencies)
+target_link_libraries(Rectangle ${OPENGL_LIBRARIES} ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/GLFW/lib/libglfw3.a ${frameworks})
