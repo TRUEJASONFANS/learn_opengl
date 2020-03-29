@@ -30,3 +30,6 @@
 *.exe
 *.out
 *.app
+opengl/.DS_Store
+opengl/CMakeCache.txt
+opengl/cmake_install.cmake

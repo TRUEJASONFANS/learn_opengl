@@ -5,3 +5,4 @@ OpenGLStudy1.build
 OpenGLStudy1.xcodeproj
 cmake_install.cmake
 CMakeCache.txt
+configuration/root_directory.h

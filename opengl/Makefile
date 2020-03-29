@@ -111,6 +111,32 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named Rectangle
+
+# Build rule for target.
+Rectangle: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Rectangle
+.PHONY : Rectangle
+
+# fast build rule for target.
+Rectangle/fast:
+	$(MAKE) -f CMakeFiles/Rectangle.dir/build.make CMakeFiles/Rectangle.dir/build
+.PHONY : Rectangle/fast
+
+#=============================================================================
+# Target rules for targets named Shaders
+
+# Build rule for target.
+Shaders: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Shaders
+.PHONY : Shaders
+
+# fast build rule for target.
+Shaders/fast:
+	$(MAKE) -f CMakeFiles/Shaders.dir/build.make CMakeFiles/Shaders.dir/build
+.PHONY : Shaders/fast
+
+#=============================================================================
 # Target rules for targets named OpenGL
 
 # Build rule for target.
@@ -129,6 +155,8 @@ glad.o: glad.c.o
 
 # target to build an object file
 glad.c.o:
+	$(MAKE) -f CMakeFiles/Rectangle.dir/build.make CMakeFiles/Rectangle.dir/glad.c.o
+	$(MAKE) -f CMakeFiles/Shaders.dir/build.make CMakeFiles/Shaders.dir/glad.c.o
 	$(MAKE) -f CMakeFiles/OpenGL.dir/build.make CMakeFiles/OpenGL.dir/glad.c.o
 .PHONY : glad.c.o
 
@@ -138,6 +166,8 @@ glad.i: glad.c.i
 
 # target to preprocess a source file
 glad.c.i:
+	$(MAKE) -f CMakeFiles/Rectangle.dir/build.make CMakeFiles/Rectangle.dir/glad.c.i
+	$(MAKE) -f CMakeFiles/Shaders.dir/build.make CMakeFiles/Shaders.dir/glad.c.i
 	$(MAKE) -f CMakeFiles/OpenGL.dir/build.make CMakeFiles/OpenGL.dir/glad.c.i
 .PHONY : glad.c.i
 
@@ -147,6 +177,8 @@ glad.s: glad.c.s
 
 # target to generate assembly for a file
 glad.c.s:
+	$(MAKE) -f CMakeFiles/Rectangle.dir/build.make CMakeFiles/Rectangle.dir/glad.c.s
+	$(MAKE) -f CMakeFiles/Shaders.dir/build.make CMakeFiles/Shaders.dir/glad.c.s
 	$(MAKE) -f CMakeFiles/OpenGL.dir/build.make CMakeFiles/OpenGL.dir/glad.c.s
 .PHONY : glad.c.s
 
@@ -177,6 +209,60 @@ main.cc.s:
 	$(MAKE) -f CMakeFiles/OpenGL.dir/build.make CMakeFiles/OpenGL.dir/main.cc.s
 .PHONY : main.cc.s
 
+main2.o: main2.cc.o
+
+.PHONY : main2.o
+
+# target to build an object file
+main2.cc.o:
+	$(MAKE) -f CMakeFiles/Shaders.dir/build.make CMakeFiles/Shaders.dir/main2.cc.o
+.PHONY : main2.cc.o
+
+main2.i: main2.cc.i
+
+.PHONY : main2.i
+
+# target to preprocess a source file
+main2.cc.i:
+	$(MAKE) -f CMakeFiles/Shaders.dir/build.make CMakeFiles/Shaders.dir/main2.cc.i
+.PHONY : main2.cc.i
+
+main2.s: main2.cc.s
+
+.PHONY : main2.s
+
+# target to generate assembly for a file
+main2.cc.s:
+	$(MAKE) -f CMakeFiles/Shaders.dir/build.make CMakeFiles/Shaders.dir/main2.cc.s
+.PHONY : main2.cc.s
+
+rectangle.o: rectangle.cc.o
+
+.PHONY : rectangle.o
+
+# target to build an object file
+rectangle.cc.o:
+	$(MAKE) -f CMakeFiles/Rectangle.dir/build.make CMakeFiles/Rectangle.dir/rectangle.cc.o
+.PHONY : rectangle.cc.o
+
+rectangle.i: rectangle.cc.i
+
+.PHONY : rectangle.i
+
+# target to preprocess a source file
+rectangle.cc.i:
+	$(MAKE) -f CMakeFiles/Rectangle.dir/build.make CMakeFiles/Rectangle.dir/rectangle.cc.i
+.PHONY : rectangle.cc.i
+
+rectangle.s: rectangle.cc.s
+
+.PHONY : rectangle.s
+
+# target to generate assembly for a file
+rectangle.cc.s:
+	$(MAKE) -f CMakeFiles/Rectangle.dir/build.make CMakeFiles/Rectangle.dir/rectangle.cc.s
+.PHONY : rectangle.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -185,6 +271,8 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... Rectangle"
+	@echo "... Shaders"
 	@echo "... OpenGL"
 	@echo "... glad.o"
 	@echo "... glad.i"
@@ -192,6 +280,12 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... main2.o"
+	@echo "... main2.i"
+	@echo "... main2.s"
+	@echo "... rectangle.o"
+	@echo "... rectangle.i"
+	@echo "... rectangle.s"
 .PHONY : help
 
 

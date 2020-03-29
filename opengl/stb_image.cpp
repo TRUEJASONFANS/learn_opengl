@@ -1,8 +1,2 @@
-//
-//  stb_image.cpp
-//  Texture
-//
-//  Created by 中威谢 on 2020/3/29.
-//
-
-#include <stdio.h>
+#define STB_IMAGE_IMPLEMENTATION
+#include "stb_image.h"
